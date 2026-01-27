@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>{% block title %}Gusti Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<a href="https://wa.me/628984108382?text=Hello%20I%20want%20to%20order%20a%20company%20website"
+   class="whatsapp-float"
+   target="_blank">
+   💬
+</a>
+
+<body>
+
+<nav class="navbar">
+    <h2>Gusti Alta Pradana</h2>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="footer">
+    <p>© 2026 Gusti Alta Pradana | Web Development Services</p>
+</footer>
+
+</body>
+</html>

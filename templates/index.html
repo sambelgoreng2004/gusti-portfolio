@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Gusti Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>High Converting Landing Pages for Growing Businesses</h1>
+
+<p>
+I help companies increase leads and sales using fast, modern,
+and conversion-optimized websites.
+</p>
+
+<a href="#contact" class="btn">Get Your Landing Page</a>
+
+
+</section>
+
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        Junior Web Programmer focused on Python backend, Flask,
+        and web application development.
+    </p>
+</section>
+
+<section class="services">
+    <h2>What I Offer</h2>
+
+    <div class="service-grid">
+        <div class="card">
+            <h3>Landing Page Design</h3>
+            <p>High-conversion landing pages optimized for business growth.</p>
+        </div>
+
+        <div class="card">
+            <h3>Company Website</h3>
+            <p>Professional corporate websites with clean UI & performance focus.</p>
+        </div>
+
+        <div class="card">
+            <h3>Backend Integration</h3>
+            <p>Contact forms, admin panels, and business automation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="why">
+    <h2>Why Choose Me</h2>
+
+    <div class="service-grid">
+        <div class="card">
+            <h3>Professional Development</h3>
+            <p>Clean code, scalable structure, and industry best practices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fast Delivery</h3>
+            <p>On-time project delivery without compromising quality.</p>
+        </div>
+
+        <div class="card">
+            <h3>Business Focused</h3>
+            <p>Websites designed to support business growth and branding.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+        {% for project in projects %}
+        <div class="card">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.desc }}</p>
+            <small>{{ project.tech }}</small>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
+<section class="contact" id="contact">
+    <h2>Get Free Project Consultation</h2>
+
+    <form method="POST" action="/contact">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Describe your company website needs"></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
