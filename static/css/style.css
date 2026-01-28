@@ -226,3 +226,7 @@ body {
     font-style: italic;
 }
 
+.pricing .card:nth-child(2) {
+    border: 2px solid var(--accent-green);
+    transform: scale(1.03);
+}
