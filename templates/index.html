@@ -17,7 +17,7 @@ and conversion-optimized websites.
 
 </section>
 
-<section class="about">
+<section class="about fade-in">
     <h2>About Me</h2>
     <p>
         Junior Web Programmer focused on Python backend, Flask,
@@ -25,7 +25,7 @@ and conversion-optimized websites.
     </p>
 </section>
 
-<section class="services">
+<section class="services fade-in">
     <h2>What I Offer</h2>
 
     <div class="service-grid">
@@ -68,7 +68,7 @@ and conversion-optimized websites.
 </section>
 
 
-<section class="projects">
+<section class="projects fade">
     <h2>Projects</h2>
 
     <div class="project-grid">
@@ -168,4 +168,18 @@ and conversion-optimized websites.
         <button type="submit">Send Message</button>
     </form>
 </section>
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+});
+
+document.querySelectorAll(".fade-in").forEach(el => {
+    observer.observe(el);
+});
+</script>
+
 {% endblock %}

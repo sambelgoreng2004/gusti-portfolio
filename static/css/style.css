@@ -230,3 +230,84 @@ body {
     border: 2px solid var(--accent-green);
     transform: scale(1.03);
 }
+/* ====== ANIMATION SYSTEM ====== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover */
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Card hover */
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+}
+
+/* Smooth scroll */
+
+html {
+    scroll-behavior: smooth;
+}
+/* ====== ANIMATION SYSTEM ====== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover */
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Card hover */
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+}
+
+/* Smooth scroll */
+
+html {
+    scroll-behavior: smooth;
+}
+section {
+    padding: 80px 20px;
+}
