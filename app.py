@@ -34,11 +34,13 @@ def contact():
         return "WA_NUMBER not configured", 500
 
     text = (
-        "Hello, I want to order a company website.\n"
-        f"Name: {name}\n"
-        f"Email: {email}\n"
-        f"Project Details: {message}"
-    )
+    "Hello Gusti, I would like to order a company website.\n\n"
+    f"Name: {name}\n"
+    f"Email: {email}\n"
+    f"Project Details:\n{message}\n\n"
+    "Please let me know the estimated price and timeline. Thank you."
+)
+
 
     encoded_text = quote_plus(text)
     wa_link = f"https://wa.me/{wa_number}?text={encoded_text}"
