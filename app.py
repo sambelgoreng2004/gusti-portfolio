@@ -1,9 +1,8 @@
-from urllib.parse import quote
-from flask import Flask, render_template
-from flask import request
-app = Flask(__name__)
+from urllib.parse import quote_plus
+from flask import Flask, render_template, request, redirect
 import os
 
+app = Flask(__name__)
 
 projects = [
     {
@@ -23,43 +22,29 @@ def home():
     return render_template("index.html", projects=projects)
 
 
-
-
 @app.route("/contact", methods=["POST"])
 def contact():
-    try:
-        name = request.form.get("name")
-        email = request.form.get("email")
-        message = request.form.get("message")
+    name = request.form.get("name", "")
+    email = request.form.get("email", "")
+    message = request.form.get("message", "")
 
-        wa_number = os.environ.get("WA_NUMBER")
+    wa_number = os.environ.get("WA_NUMBER", "").strip()
 
-        if not wa_number:
-            print("ERROR: WA_NUMBER not found in ENV")
-            return "Server config error. Please contact admin.", 500
+    if not wa_number:
+        return "WA_NUMBER not configured", 500
 
-        wa_text = f"""
-Hello, I want to order a company website.
+    text = (
+        "Hello, I want to order a company website.\n"
+        f"Name: {name}\n"
+        f"Email: {email}\n"
+        f"Project Details: {message}"
+    )
 
-Name: {name}
-Email: {email}
-Project Details:
-{message}
-"""
+    encoded_text = quote_plus(text)
+    wa_link = f"https://wa.me/{wa_number}?text={encoded_text}"
 
-        wa_text_encoded = quote(wa_text)
-
-        wa_link = f"https://wa.me/{wa_number}?text={wa_text_encoded}"
-
-        return render_template("success.html", wa_link=wa_link, name=name)
-
-    except Exception as e:
-        print("CONTACT ERROR:", e)
-        return "Internal error", 500
-
-
-
+    return redirect(wa_link)
 
 
 if __name__ == "__main__":
-    app.run
+    app.run()
