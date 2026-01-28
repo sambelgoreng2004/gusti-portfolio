@@ -42,7 +42,7 @@ Project Details:
 
     wa_text_encoded = quote(wa_text)
 
-    wa_link = f"https://wa.me/6289894188382?text={wa_text_encoded}"
+    wa_link = f"https://wa.me/628984108382?text={wa_text_encoded}"
 
     return render_template("success.html", wa_link=wa_link, name=name)
 
