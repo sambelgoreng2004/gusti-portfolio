@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thank You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background:#0b1220;
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+            text-align:center;
+            font-family:Arial;
+        }
+
+        .box {
+            max-width:400px;
+            padding:20px;
+        }
+
+        a {
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 20px;
+            background:#22c55e;
+            color:black;
+            border-radius:30px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Thank you {{ name }} 👋</h2>
+    <p>Your request has been received.</p>
+    <p>Click below to chat directly on WhatsApp:</p>
+
+    <a href="https://wa.me/628984188382?text=Hello,%20I%20want%20to%20order%20a%20company%20website">
+        Chat on WhatsApp
+    </a>
+</div>
+
+</body>
+</html>
