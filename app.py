@@ -22,6 +22,11 @@ projects = [
     }
 ]
 
+@app.route("/")
+def home():
+    return render_template("index.html", projects=projects)
+
+
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form["name"]
