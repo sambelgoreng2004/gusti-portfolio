@@ -209,3 +209,20 @@ body {
         right: 15px;
     }
 }
+.pricing {
+    padding: 60px 40px;
+    background: var(--bg-light);
+}
+
+.pricing ul {
+    padding-left: 18px;
+    font-size: 14px;
+}
+.testimonials {
+    padding: 60px 40px;
+}
+
+.testimonials .card {
+    font-style: italic;
+}
+
