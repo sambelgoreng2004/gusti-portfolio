@@ -48,10 +48,10 @@ def contact():
         return "WhatsApp number not configured", 500
 
     wa_text = (
-        "Hello, I would like to order a company website.%0A%0A"
-        f"Name: {name}%0A"
-        f"Email: {email}%0A"
-        f"Project Details:%0A{message}"
+        "Hello, I would like to order a company website.\n\n"
+        f"Name: {name}\n"
+        f"Email: {email}\n"
+        f"Project Details:\n{message}"
     )
 
     encoded_text = quote_plus(wa_text)
@@ -59,6 +59,7 @@ def contact():
     wa_link = f"https://wa.me/{wa_number}?text={encoded_text}"
 
     return redirect(wa_link)
+
 
 
 # -------------------------------
