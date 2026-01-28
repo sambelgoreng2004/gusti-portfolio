@@ -23,16 +23,29 @@ def home():
     return render_template("index.html", projects=projects)
 
 
+from urllib.parse import quote
+
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form["name"]
     email = request.form["email"]
     message = request.form["message"]
 
-    print("NEW LEAD:")
-    print(name, email, message)
+    wa_text = f"""
+Hello, I want to order a company website.
 
-    return render_template("success.html", name=name)
+Name: {name}
+Email: {email}
+Project Details:
+{message}
+"""
+
+    wa_text_encoded = quote(wa_text)
+
+    wa_link = f"https://wa.me/6289894188382?text={wa_text_encoded}"
+
+    return render_template("success.html", wa_link=wa_link, name=name)
+
 
 
 
